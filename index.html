@@ -7,16 +7,15 @@
     <!-- Menggunakan Tailwind CSS versi terbaru -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
-    <!-- Google Fonts: Bricolage Grotesque (Judul yang Sangat Menarik) & Plus Jakarta Sans (Sangat Nyaman Dibaca) -->
+    <!-- Google Fonts: Bricolage Grotesque & Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Setup Font Utama */
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #030712; 
+            background-color: #020617; 
         }
         .font-display { 
             font-family: 'Bricolage Grotesque', sans-serif; 
@@ -29,27 +28,27 @@
                         linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, #3b82f6, transparent) border-box;
             border: 2px solid transparent;
             border-radius: 2rem;
-            padding: 2.25rem 1.25rem 1.25rem 1.25rem;
-            box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.15);
+            padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
         }
 
         /* Badge Judul Tepat di Tengah-Tengah */
         .border-kurikulum-center::before {
-            content: "DATA KURIKULUM SLBN 2 PEMALANG";
+            content: "MENU UTAMA DATABASE";
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             color: #ffffff;
-            padding: 4px 18px;
+            padding: 5px 22px;
             border-radius: 9999px;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: 800;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             white-space: nowrap;
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.4);
         }
 
         /* Efek Hover Refleksi Simetris */
@@ -57,146 +56,177 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .menu-item-center:hover {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-color: rgba(139, 92, 246, 0.4);
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.1);
+            background-color: rgba(59, 130, 246, 0.08);
+            border-color: rgba(139, 92, 246, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        /* Custom Animasi Marquee Horizontal yang Halus */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
         }
     </style>
 </head>
-<body class="text-slate-300 min-h-screen py-6 md:py-10 px-4 flex items-center justify-center antialiased">
+<body class="text-slate-300 min-h-screen py-8 md:py-12 px-4 flex items-center justify-center antialiased relative overflow-x-hidden">
 
     <!-- Ornamen Latar Belakang Center Glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[150px] pointer-events-none"></div>
 
     <!-- Container Utama -->
-    <div class="max-w-lg w-full space-y-6 relative z-10">
+    <div class="max-w-md w-full space-y-6 relative z-10">
         
-        <!-- HEADER -->
-        <header class="text-center space-y-2">
-            <div class="inline-flex items-center justify-center space-x-2 bg-blue-950/40 border border-blue-900/50 px-3.5 py-1 rounded-full backdrop-blur-md">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                <span class="text-[9px] font-extrabold tracking-widest text-blue-400 uppercase">Kurikulum Database v2.6</span>
+        <!-- HEADER DENGAN LOGO -->
+        <header class="text-center space-y-3">
+            <!-- LOGO SEKOLAH (Ganti URL gambar di src bawah ini) -->
+            <div class="relative inline-block group">
+                <!-- Efek cahaya pendar di belakang logo -->
+                <div class="absolute inset-0 bg-blue-500/20 rounded-full blur-md opacity-70 group-hover:bg-blue-500/40 transition-all"></div>
+                <img src="https://slbn2pemalang.sch.id/wp-content/uploads/2025/07/logooo.png" 
+                     alt="Logo SLBN 2 Pemalang" 
+                     class="relative w-16 h-16 md:w-20 md:h-20 object-contain mx-auto drop-shadow-[0_4px_10px_rgba(59,130,246,0.5)] transition-transform duration-500 group-hover:scale-105">
             </div>
-            <h1 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-white uppercase leading-none">
-                DATA KURIKULUM
-            </h1>
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest">SLB Negeri 2 Pemalang</p>
+
+            <!-- Teks Versi -->
+            <div>
+                <div class="inline-flex items-center justify-center space-x-2 bg-blue-950/40 border border-blue-900/50 px-3.5 py-1 rounded-full backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                    <span class="text-[9px] font-extrabold tracking-widest text-blue-400 uppercase">Kurikulum Database v2.6</span>
+                </div>
+            </div>
+
+            <!-- Judul Utama -->
+            <div class="space-y-1">
+                <h1 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-white uppercase leading-none">
+                    DATA KURIKULUM
+                </h1>
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest">SLB Negeri 2 Pemalang</p>
+            </div>
             <div class="w-20 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto mt-2"></div>
         </header>
 
-        <!-- JENDELA INFORMASI: Font Dikecilkan Sedikit & Dibuat Lebih Rapi -->
-        <section class="space-y-2.5">
-            <h2 class="text-[10px] font-extrabold text-slate-500 text-center uppercase tracking-widest">
-                PAPAN INFORMASI UMUM
-            </h2>
+        <!-- JENDELA INFORMASI JALAN (MARQUEE) -->
+        <section class="space-y-2">
+            <div class="flex items-center justify-between px-1">
+                <h2 class="text-[9px] font-extrabold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
+                    <i class="fas fa-bullhorn text-blue-400 animate-bounce"></i> Info Bergerak
+                </h2>
+                <span class="text-[8px] text-slate-600 font-bold uppercase tracking-wider">Tahan untuk jeda</span>
+            </div>
             
-            <div class="space-y-2.5">
-                <!-- Info 1: Rapor (Font diperkecil sedikit agar presisi & nyaman dibaca) -->
-                <div class="bg-gradient-to-r from-slate-950 via-slate-950 to-blue-950/20 border-y border-r border-l-4 border-l-amber-500 border-slate-900 p-4 rounded-2xl backdrop-blur-md">
-                    <div class="flex items-center justify-between border-b border-slate-900/80 pb-2 mb-2">
-                        <span class="text-[9px] font-extrabold tracking-wider text-amber-500 uppercase flex items-center gap-1.5">
-                            <i class="fas fa-circle-exclamation text-xs"></i> PENGUMUMAN PENTING
+            <div class="w-full overflow-hidden bg-slate-950/60 border border-slate-900 py-3 rounded-xl backdrop-blur-md relative flex items-center">
+                <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
+                
+                <div class="animate-marquee whitespace-nowrap flex gap-8 items-center cursor-pointer">
+                    <!-- KONTEN SET 1 -->
+                    <div class="flex gap-8 items-center text-xs font-medium">
+                        <span class="flex items-center gap-2 text-amber-400">
+                            <span class="bg-amber-500/10 border border-amber-500/30 px-1.5 py-0.5 rounded font-bold text-[9px] uppercase">Rapor</span>
+                            Jadwal Penerimaan Rapor pada tanggal 19 Juni 2026. Mohon persiapkan dengan baik.
                         </span>
-                        <span class="text-[9px] font-semibold text-slate-500 tracking-wider">JUNI 2026</span>
+                        <span class="text-slate-700 font-light">•</span>
+                        <span class="flex items-center gap-2 text-purple-400">
+                            <span class="bg-purple-500/10 border border-purple-500/30 px-1.5 py-0.5 rounded font-bold text-[9px] uppercase">Kokurikuler</span>
+                             (Coming Soon) Kegiatan akan berlangsung di tahun ajaran baru.
+                        </span>
+                        <span class="text-slate-700 font-light">•</span>
+                        <span class="flex items-center gap-2 text-emerald-400">
+                            <span class="bg-emerald-500/10 border border-emerald-500/30 px-1.5 py-0.5 rounded font-bold text-[9px] uppercase">Bakat Minat</span>
+                            Kegiatan Bakat minat dilaksanakan pada hari jumat di minggu ke 3.
+                        </span>
                     </div>
-                    <h4 class="font-bold text-sm text-slate-100 uppercase tracking-wide">
-                        Jadwal Penerimaan Rapor
-                    </h4>
-                    <!-- Ukuran teks disesuaikan ke text-xs dengan leading-relaxed agar ramah mata senior -->
-                    <p class="text-[12px] text-slate-400 font-medium mt-1.5 leading-relaxed">
-                        Diagendakan pada <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-1.5 py-0.5 rounded font-bold text-[11px]">MINGGU KETIGA JUNI 2026</span>. Dimohon bapak/ibu guru segera merapikan rekap data nilai siswa.
-                    </p>
-                </div>
 
-                <!-- Info 2 & 3: Dibagi 2 Kolom -->
-                <div class="grid grid-cols-2 gap-2.5">
-                    <div class="bg-slate-950/60 border border-slate-900 border-l-4 border-l-purple-500 p-3 rounded-2xl backdrop-blur-md flex flex-col justify-between">
-                        <div>
-                            <span class="text-[8px] font-extrabold text-purple-400 uppercase tracking-widest block mb-0.5"> KOGNITIF </span>
-                            <h4 class="font-bold text-xs text-slate-200 uppercase">Kokurikuler</h4>
-                        </div>
-                        <p class="text-[11px] text-slate-500 font-medium mt-2 leading-normal bg-purple-950/20 border border-purple-900/20 py-1 px-2 rounded text-center">
-                            Coming soon.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-slate-950/60 border border-slate-900 border-l-4 border-l-emerald-500 p-3 rounded-2xl backdrop-blur-md flex flex-col justify-between">
-                        <div>
-                            <span class="text-[8px] font-extrabold text-emerald-400 uppercase tracking-widest block mb-0.5"> INKLUSI </span>
-                            <h4 class="font-bold text-xs text-slate-200 uppercase">Bakat Minat</h4>
-                        </div>
-                        <p class="text-[11px] text-emerald-400/90 font-semibold mt-2 leading-normal bg-emerald-950/20 border border-emerald-900/20 py-1 px-2 rounded text-center">
-                            Jum'at Minggu Ke-3
-                        </p>
+                    <!-- KONTEN SET 2 -->
+                    <div class="flex gap-8 items-center text-xs font-medium" aria-hidden="true">
+                        <span class="flex items-center gap-2 text-amber-400">
+                            <span class="bg-amber-500/10 border border-amber-500/30 px-1.5 py-0.5 rounded font-bold text-[9px] uppercase">Rapor</span>
+                            Jadwal Penerimaan Rapor pada tanggal 19 Juni 2026. Mohon persiapkan dengan baik.
+                        </span>
+                        <span class="text-slate-700 font-light">•</span>
+                        <span class="flex items-center gap-2 text-purple-400">
+                            <span class="bg-purple-500/10 border border-purple-500/30 px-1.5 py-0.5 rounded font-bold text-[9px] uppercase">Kokurikuler</span>
+                            Kognitif: (Coming Soon) perangkat materi baru.
+                        </span>
+                        <span class="text-slate-700 font-light">•</span>
+                        <span class="flex items-center gap-2 text-emerald-400">
+                            <span class="bg-emerald-500/10 border border-emerald-500/30 px-1.5 py-0.5 rounded font-bold text-[9px] uppercase">Bakat Minat</span>
+                            Inklusi diselenggarakan setiap hari Jum'at Minggu Ke-3.
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- AREA UTAMA MENU -->
-        <section class="border-kurikulum-center">
-            <div class="space-y-2">
-                
+        <section class="border-kurikulum-center !mt-4">
+            <div class="space-y-2.5">
                 <!-- Link RPP -->
-                <a href="https://guruinovatif-my.sharepoint.com/:f:/p/mohammadtrihatmodjo/IgCp1poBYqWNQKMOXymCSkKNAQm5UFxSaw__BDNpZKJ3JGo" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3 bg-slate-950/40 border border-slate-900 rounded-xl group">
-                    <div class="w-8 h-8 bg-blue-950/40 text-blue-400 border border-blue-900/30 rounded-lg flex items-center justify-center text-xs shrink-0">
+                <a href="https://guruinovatif-my.sharepoint.com/:f:/p/mohammadtrihatmodjo/IgCp1poBYqWNQKMOXymCSkKNAQm5UFxSaw__BDNpZKJ3JGo" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3.5 bg-slate-900/50 border border-slate-800/80 rounded-xl group">
+                    <div class="w-9 h-9 bg-blue-950/60 text-blue-400 border border-blue-900/40 rounded-lg flex items-center justify-center text-sm shrink-0 shadow-inner group-hover:scale-105 transition-transform">
                         <i class="fas fa-cloud-arrow-up"></i>
                     </div>
-                    <div class="ml-3 text-left">
-                        <h3 class="text-xs font-bold text-white tracking-wide uppercase group-hover:text-blue-400 transition-colors">Upload RPP / Modul Ajar</h3>
-                        <p class="text-[10px] text-slate-500 font-medium mt-0.5">Administrasi perangkat mengajar guru</p>
+                    <div class="ml-3.5 text-left">
+                        <h3 class="text-xs font-extrabold text-white tracking-wide uppercase group-hover:text-blue-400 transition-colors">Upload RPP / Modul Ajar</h3>
+                        <p class="text-[10px] text-slate-400 font-medium mt-0.5 group-hover:text-slate-300 transition-colors">Administrasi perangkat mengajar guru</p>
                     </div>
-                    <i class="fas fa-chevron-right ml-auto text-[10px] text-slate-700 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all"></i>
+                    <i class="fas fa-arrow-right-long ml-auto text-xs text-slate-700 group-hover:text-blue-400 group-hover:translate-x-1 transition-all"></i>
                 </a>
 
                 <!-- Link ATP -->
-                <a href="https://guruinovatif-my.sharepoint.com/:f:/p/mohammadtrihatmodjo/IgBNKFkwpZMAQ5rmCuasVA6cATBSrfFmh_YCU_k6H2avD9A" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3 bg-slate-950/40 border border-slate-900 rounded-xl group">
-                    <div class="w-8 h-8 bg-purple-950/40 text-purple-400 border border-purple-900/30 rounded-lg flex items-center justify-center text-xs shrink-0">
+                <a href="https://guruinovatif-my.sharepoint.com/:f:/p/mohammadtrihatmodjo/IgBNKFkwpZMAQ5rmCuasVA6cATBSrfFmh_YCU_k6H2avD9A" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3.5 bg-slate-900/50 border border-slate-800/80 rounded-xl group">
+                    <div class="w-9 h-9 bg-purple-950/60 text-purple-400 border border-purple-900/40 rounded-lg flex items-center justify-center text-sm shrink-0 shadow-inner group-hover:scale-105 transition-transform">
                         <i class="fas fa-folder-tree"></i>
                     </div>
-                    <div class="ml-3 text-left">
-                        <h3 class="text-xs font-bold text-white tracking-wide uppercase group-hover:text-purple-400 transition-colors">Upload Dokumen ATP</h3>
-                        <p class="text-[10px] text-slate-500 font-medium mt-0.5">Alur Tujuan Pembelajaran per Fase</p>
+                    <div class="ml-3.5 text-left">
+                        <h3 class="text-xs font-extrabold text-white tracking-wide uppercase group-hover:text-purple-400 transition-colors">Upload Dokumen ATP</h3>
+                        <p class="text-[10px] text-slate-400 font-medium mt-0.5 group-hover:text-slate-300 transition-colors">Alur Tujuan Pembelajaran per Fase</p>
                     </div>
-                    <i class="fas fa-chevron-right ml-auto text-[10px] text-slate-700 group-hover:text-purple-400 group-hover:translate-x-0.5 transition-all"></i>
+                    <i class="fas fa-arrow-right-long ml-auto text-xs text-slate-700 group-hover:text-purple-400 group-hover:translate-x-1 transition-all"></i>
                 </a>
 
                 <!-- Link Administrasi Kelas -->
-                <a href="https://drive.google.com/drive/folders/1FWiciJyBZSi8LIrCgKIw8sQL7QyJxftc?usp=sharing" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3 bg-slate-950/40 border border-slate-900 rounded-xl group">
-                    <div class="w-8 h-8 bg-slate-900/60 text-slate-400 border border-slate-800 rounded-lg flex items-center justify-center text-xs shrink-0">
+                <a href="https://drive.google.com/drive/folders/1FWiciJyBZSi8LIrCgKIw8sQL7QyJxftc?usp=sharing" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3.5 bg-slate-900/50 border border-slate-800/80 rounded-xl group">
+                    <div class="w-9 h-9 bg-slate-800/60 text-slate-300 border border-slate-700/40 rounded-lg flex items-center justify-center text-sm shrink-0 shadow-inner group-hover:scale-105 transition-transform">
                         <i class="fas fa-box-archive"></i>
                     </div>
-                    <div class="ml-3 text-left">
-                        <h3 class="text-xs font-bold text-white tracking-wide uppercase group-hover:text-slate-300 transition-colors">Administrasi Kelas 2025</h3>
-                        <p class="text-[10px] text-slate-500 font-medium mt-0.5">Arsip digital rekap data tahun lalu</p>
+                    <div class="ml-3.5 text-left">
+                        <h3 class="text-xs font-extrabold text-white tracking-wide uppercase group-hover:text-slate-200 transition-colors">Administrasi Kelas 2025</h3>
+                        <p class="text-[10px] text-slate-400 font-medium mt-0.5 group-hover:text-slate-300 transition-colors">Arsip digital rekap data tahun lalu</p>
                     </div>
-                    <i class="fas fa-chevron-right ml-auto text-[10px] text-slate-700 group-hover:text-white group-hover:translate-x-0.5 transition-all"></i>
+                    <i class="fas fa-arrow-right-long ml-auto text-xs text-slate-700 group-hover:text-white group-hover:translate-x-1 transition-all"></i>
                 </a>
 
                 <!-- Link Akreditasi -->
-                <a href="https://drive.google.com/drive/folders/1D95Ysqfx7pxsX_8vR-LFF5b0YUl87kxO?usp=sharing" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3 bg-slate-950/40 border border-slate-900 rounded-xl group">
-                    <div class="w-8 h-8 bg-emerald-950/40 text-emerald-400 border border-emerald-800/30 rounded-lg flex items-center justify-center text-xs shrink-0">
+                <a href="https://drive.google.com/drive/folders/1D95Ysqfx7pxsX_8vR-LFF5b0YUl87kxO?usp=sharing" target="_blank" rel="noopener noreferrer" class="menu-item-center flex items-center p-3.5 bg-slate-900/50 border border-slate-800/80 rounded-xl group">
+                    <div class="w-9 h-9 bg-emerald-950/60 text-emerald-400 border border-emerald-900/40 rounded-lg flex items-center justify-center text-sm shrink-0 shadow-inner group-hover:scale-105 transition-transform">
                         <i class="fas fa-shield-halved"></i>
                     </div>
-                    <div class="ml-3 text-left">
-                        <h3 class="text-xs font-bold text-white tracking-wide uppercase group-hover:text-emerald-400 transition-colors">Data Akreditasi 2026</h3>
-                        <p class="text-[10px] text-slate-500 font-medium mt-0.5">Persiapan standarisasi mutu berkala</p>
+                    <div class="ml-3.5 text-left">
+                        <h3 class="text-xs font-extrabold text-white tracking-wide uppercase group-hover:text-emerald-400 transition-colors">Data Akreditasi 2026</h3>
+                        <p class="text-[10px] text-slate-400 font-medium mt-0.5 group-hover:text-slate-300 transition-colors">Persiapan standarisasi mutu berkala</p>
                     </div>
-                    <i class="fas fa-chevron-right ml-auto text-[10px] text-slate-700 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all"></i>
+                    <i class="fas fa-arrow-right-long ml-auto text-xs text-slate-700 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"></i>
                 </a>
-
             </div>
         </section>
 
         <!-- FOOTER SIGNATURE -->
-        <footer class="text-center pt-2 flex flex-col items-center justify-center space-y-2.5">
+        <footer class="text-center pt-2 flex flex-col items-center justify-center space-y-3">
             <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
             
             <div class="relative group cursor-default">
-                <!-- Efek Glow Belakang -->
                 <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur-md opacity-10 group-hover:opacity-40 transition-opacity duration-500"></div>
                 
-                <!-- Kotak Kreator -->
                 <div class="relative flex items-center space-x-3 bg-slate-950/40 border border-slate-900 group-hover:border-blue-500/30 px-4 py-2 rounded-xl backdrop-blur-xl transition-all duration-300">
                     <div class="flex items-center justify-center w-6 h-6 rounded-md bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xs shrink-0">
                         <i class="fas fa-code"></i>
@@ -210,7 +240,6 @@
                 </div>
             </div>
 
-            <!-- Teks Legalitas Bawah -->
             <p class="text-[9px] font-semibold text-slate-600 tracking-[0.1em] uppercase flex items-center justify-center space-x-1.5">
                 <span>&copy; 2026</span>
                 <span class="text-slate-800">•</span>
